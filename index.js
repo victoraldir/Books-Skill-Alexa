@@ -51,12 +51,12 @@ app.intent('getBook', {
                   'TitleThree': 'TITLE',
                   'TitleFour': 'TITLE',
                   'TitleFive': 'TITLE'},
-        'utterances': ['get {a|the|that|} book',
-                       'get {a|the|that|} book {-|TitleOne}',
-                       'get {a|the|that|} book {-|TitleOne} {-|TitleTwo}',
-                       'get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree}',
-                       'get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree} {-|TitleFour}',
-                       'get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree} {-|TitleFour} {-|TitleFive}']
+        'utterances': ['{to |} get {a|the|that|} book',
+                       '{to |} get {a|the|that|} book {-|TitleOne}',
+                       '{to |} get {a|the|that|} book {-|TitleOne} {-|TitleTwo}',
+                       '{to |} get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree}',
+                       '{to |} get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree} {-|TitleFour}',
+                       '{to |} get {a|the|that|} book {-|TitleOne} {-|TitleTwo} {-|TitleThree} {-|TitleFour} {-|TitleFive}']
     }, function(req,res) {
       var title = req.slot('TitleOne');
       if (title) {
@@ -174,15 +174,16 @@ app.intent('AMAZON.HelpIntent', {
 
 module.exports = app;
 
-/*chatskills.launch(app);
+// chatskills.launch(app);
 
 // Console client.
-var text = ' ';
-while (text.length > 0 && text != 'quit') {
-    text = readlineSync.question('> ');
+// var text = ' ';
+// while (text.length > 0 && text != 'quit') {
+//     text = readlineSync.question('> ');
 
-    // Respond to input.
-    chatskills.respond(text, function(response) {
-        console.log(response);
-    });
-}*/
+//     // Respond to input.
+//     chatskills.respond(text, function(response) {
+//         //console.log(app.utterances());
+//         console.log(response);
+//     });
+// }
